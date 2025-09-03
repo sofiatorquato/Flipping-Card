@@ -1,0 +1,163 @@
+:root {
+  --gradiente-frente: linear-gradient(135deg, #0e7930, #003511);
+  --gradiente-tras: linear-gradient(135deg, #8cbe03, #042f00);
+  --texto-claro: #fff;
+  --texto-escuro: #222;
+  --dourado: #d4af37;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url(../img/fundocard.jpg);
+  background-size: cover;       /* a imagem cobre toda a tela */
+  background-position: center;  /* centraliza */
+  background-repeat: no-repeat;
+}
+
+/* Container com perspectiva */
+.card-wrapper {
+  perspective: 1200px;
+  width: 90vw;
+  max-width: 500px;
+  cursor: pointer;
+}
+
+.card {
+  position: relative;
+  width: 130%;
+  aspect-ratio: 16/10;
+  transition: transform 0.8s ease;
+  transform-style: preserve-3d;
+  border-radius: 20px;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+}
+
+/* Faces */
+.front, .back {
+  position: absolute;
+  inset: 0;
+  border-radius: 20px;
+  padding: 20px;
+  backface-visibility: hidden;
+}
+
+/* Frente */
+.front {
+  background: var(--gradiente-frente);
+  color: var(--texto-claro);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Topo (chip + bandeira) */
+.top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.chip img {
+  width: 70px;
+  height: 50px;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
+}
+.bandeira img {
+  width: 100px;
+}
+
+/* Número */
+.numero {
+  font-size: 2.0rem;
+  letter-spacing: 4px;
+  text-shadow: 1px 1px 4px rgba(0,0,0,0.4);
+  margin: 20px 0;
+}
+
+/* Nome e validade */
+.detalhes {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+.nome {
+  font-size: 1.2rem;
+  letter-spacing: 2px;
+}
+.validade {
+  font-size: 1.0rem;
+  text-align: right;
+}
+.validade strong {
+  font-size: 1.2rem;
+  display: block;
+  color: var(--dourado);
+}
+
+/* Verso */
+.back {
+  background: var(--gradiente-tras);
+  transform: rotateY(180deg);
+  color: var(--texto-claro);
+  display: flex;
+  flex-direction: column;
+}
+
+/* Faixa preta */
+.faixa-preta {
+  background: #000;
+  height: 50px;
+  width: 100%;
+  padding: 0;
+  margin: 20px 0;
+  border-radius: 4px;
+}
+
+/* Assinatura */
+.assinatura {
+  background: #fff;
+  color: var(--texto-escuro);
+  padding: 5px;
+  margin: 0 0 20px 0;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  font-size: 2;
+}
+.assinatura .linha {
+  height: 20px;
+  border-bottom: 2px dashed #888;
+}
+
+/* CVV */
+.cvv {
+  background: #fff;
+  color: #000;
+  width: 60px;
+  text-align: center;
+  padding: 5px;
+  border-radius: 4px;
+  font-weight: bold;
+  align-self: flex-end;
+  margin-bottom: auto;
+  font-size: 20px;
+}
+
+/* Logo BANCO no verso */
+.logo-verso {
+  margin-top: auto;
+  text-align: right;
+  font-size: 1.2rem;
+  font-weight: bold;
+  letter-spacing: 2px;
+  color: var(--dourado);
+}

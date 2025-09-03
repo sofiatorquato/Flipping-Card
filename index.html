@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="title" content="Flipping Card - Exemplo">
+    <meta name="description" content="Cartão interativo com efeito flip em HTML, CSS e JavaScript.">
+    <meta name="keywords" content="HTML, CSS, JavaScript, cartão, flip card, animação">
+    <meta name="author" content="Sofia B. Torquato">
+    <meta name="robots" content="index, follow">
+
+    <title>Flipping Card</title>
+    <link rel="shortcut icon" href="img/iconcard.png" type="image/x-icon">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/style.js" defer></script>
+</head>
+
+<body>
+    <div class="card-wrapper">
+        <div class="card">
+
+            <!-- Frente -->
+            <div class="front">
+                <div class="top">
+                    <div class="chip">
+                        <img src="img/chip.png" alt="Chip">
+                    </div>
+                    <div class="bandeira">
+                        <img src="img/bandeira.png" alt="Bandeira">
+                    </div>
+                </div>
+
+                <div class="numero">1234 5678 9012 3456</div>
+
+                <div class="detalhes">
+                    <div class="nome">MORGANA VIEIRA</div>
+                    <div class="validade">
+                        <span>VALIDADE</span>
+                        <strong>12/28</strong>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Verso  -->
+            <div class="back">
+                <div class="faixa-preta"></div>
+                <div class="assinatura">
+                    <span>Assinatura</span>
+                    <div class="linha"></div>
+                </div>
+                <div class="cvv">123</div>
+                <div class="logo-verso">Banco</div>
+            </div>
+
+        </div>
+    </div>
+</body>
+
+</html>
